@@ -1,40 +1,39 @@
-import Counter from "./components/Counter";
-import logo from "./assets/logo.svg";
-
+import axios from "axios";
+import { useState } from "react";
+import Cards from "./components/Cards";
 import "./App.css";
 
 function App() {
+  const [playlists, setPlaylists] = useState([]);
+  const getPlaylist = async () => {
+    const token =
+      "BQCSe5gAhm54RgI7FXlopTEv-mjF4gRN1nnYJDJMUQ17Kw7uKXwr-c2aM6_lFaaLaPRYCmA4aCoQUuYi0XgCRNj3yqST0MMiif1s28qdha-qlTbh-8M";
+
+    const reponse = await axios.get(
+      "https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFKLfwjuJMoNC/playlists",
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+
+    setPlaylists(reponse.data.playlists.items);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React !</p>
+    <div>
+      <button type="button" onClick={getPlaylist}>
+        Avoir une playlist !
+      </button>
 
-        <Counter />
-
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <div>
+        {playlists.map((element) => {
+          return (
+            <Cards
+              playlistName={element.name}
+              imgCover={element.images[0].url}
+              key={element.id}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
