@@ -7,7 +7,7 @@ function App() {
   const [playlists, setPlaylists] = useState([]);
   const getPlaylist = async () => {
     const token =
-      "BQCVAf7-rWDL5mNL50pB_ofCJqymAPYdSiL2Fh5YvHr4yOvpyocKvKKuhqIqlXcpg3mWft4hcQ6NvLe5Fjb52FniPwhSqhvGTQ_v-ymLnBLr6158ZEg";
+      "BQAKYxlDKtxZMCaIe52FWuV0eaeClKun8y2KhQzaroCnwEHAhF19ojoPDz1yARJhF0zkoA_5mRGMOcMu9cmfUzQqhc0h1kwPwAkVcppVoHu3cTY2CFE";
 
     const reponse = await axios.get(
       "https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFKLfwjuJMoNC/playlists",
