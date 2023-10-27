@@ -1,40 +1,42 @@
-import Counter from "./components/Counter";
-import logo from "./assets/logo.svg";
-
-import "./App.css";
+import axios from "axios";
+import { useState } from "react";
+import Cards from "./components/Cards";
+import "./style/App.scss";
 
 function App() {
+  const [playlists, setPlaylists] = useState([]);
+  const getPlaylist = async () => {
+    const token =
+      "BQCVAf7-rWDL5mNL50pB_ofCJqymAPYdSiL2Fh5YvHr4yOvpyocKvKKuhqIqlXcpg3mWft4hcQ6NvLe5Fjb52FniPwhSqhvGTQ_v-ymLnBLr6158ZEg";
+
+    const reponse = await axios.get(
+      "https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFKLfwjuJMoNC/playlists",
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+
+    setPlaylists(reponse.data.playlists.items);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React !</p>
+    <div className="container">
+      <div className="btn-container">
+        <button className="btn-generation" type="button" onClick={getPlaylist}>
+          Générer des playlists !
+        </button>
+      </div>
 
-        <Counter />
-
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <div>
+        {playlists.map((element) => {
+          return (
+            <Cards
+              playlistName={element.name}
+              imgCover={element.images[0].url}
+              playlistCategory={element.description}
+              key={element.id}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
