@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
 import Cards from "./components/Cards";
-import "./App.css";
+import "./style/App.scss";
 
 function App() {
   const [playlists, setPlaylists] = useState([]);
   const getPlaylist = async () => {
     const token =
-      "BQDyJW32z5870eVNnsy9Bsh6OMNKPZykID8hBDPXqk8n55BAAjmP8ht9wgFJU2xeuXaJkQ4hs_vqDZfyIqCXHdg2Nke4Cs0dfjLv1bhRy02S49VxM3k";
+      "BQCSe5gAhm54RgI7FXlopTEv-mjF4gRN1nnYJDJMUQ17Kw7uKXwr-c2aM6_lFaaLaPRYCmA4aCoQUuYi0XgCRNj3yqST0MMiif1s28qdha-qlTbh-8M";
 
     const reponse = await axios.get(
       "https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFKLfwjuJMoNC/playlists",
@@ -18,10 +18,12 @@ function App() {
   };
 
   return (
-    <div>
-      <button type="button" onClick={getPlaylist}>
-        Avoir une playlist !
-      </button>
+    <div className="container">
+      <div className="btn-container">
+        <button className="btn-generation" type="button" onClick={getPlaylist}>
+          Générer des playlists !
+        </button>
+      </div>
 
       <div>
         {playlists.map((element) => {
@@ -29,6 +31,7 @@ function App() {
             <Cards
               playlistName={element.name}
               imgCover={element.images[0].url}
+              playlistCategory={element.description}
               key={element.id}
             />
           );
