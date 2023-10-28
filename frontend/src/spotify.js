@@ -1,6 +1,6 @@
 import axios from "axios";
 const CLIENT_ID = "6d42d06f69664a2d825342dbc4d9844d";
-const CLIENT_SECRET = "ec6a1ed81b9842a3b5e945c091630364";
+const CLIENT_SECRET = "";
 
 const getToken = async () => {
   const data = {

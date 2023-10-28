@@ -26,7 +26,12 @@ function Cards({ playlistName, imgCover, playlistCategory }) {
       </button>
 
       {tracks.map((track) => {
-        return <Tracks nameTrack={track.track.name} />;
+        return (
+          <Tracks
+            nameTrack={track.track.name}
+            imgCoverTrack={track.track.album.images[0].url}
+          />
+        );
       })}
     </div>
   );

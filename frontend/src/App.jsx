@@ -12,6 +12,7 @@ function App() {
     const token = await getToken();
     const reponse = await axios.get(
       `https://api.spotify.com/v1/browse/categories/${Moods.Chill}/playlists`,
+
       { headers: { Authorization: `Bearer ${token}` } }
     );
 
@@ -21,9 +22,24 @@ function App() {
   return (
     <div className="container">
       <div className="btn-container">
-        <button className="btn-generation" type="button" onClick={getPlaylist}>
+        {/* <button className="btn-generation" type="button" onClick={getPlaylist}>
           Playlist Happy !
-        </button>
+        </button> */}
+
+        <div>
+          <select
+            className="select-container"
+            onChange={getPlaylist}
+            name="pets"
+            id="pet-select"
+          >
+            <option type="button" value="">
+              Choisir son Mood
+            </option>
+            <option value="chill">Chill</option>
+            <option value="cat">Cat</option>
+          </select>
+        </div>
       </div>
 
       <div>
