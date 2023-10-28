@@ -2,15 +2,17 @@ import axios from "axios";
 import { useState } from "react";
 import Cards from "./components/Cards";
 import "./style/App.scss";
+import Direction from "./models/Moods";
 
 function App() {
   const [playlists, setPlaylists] = useState([]);
+
   const getPlaylist = async () => {
     const token =
       "BQCSe5gAhm54RgI7FXlopTEv-mjF4gRN1nnYJDJMUQ17Kw7uKXwr-c2aM6_lFaaLaPRYCmA4aCoQUuYi0XgCRNj3yqST0MMiif1s28qdha-qlTbh-8M";
 
     const reponse = await axios.get(
-      "https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFKLfwjuJMoNC/playlists",
+      `https://api.spotify.com/v1/browse/categories/${Direction.Chill}/playlists`,
       { headers: { Authorization: `Bearer ${token}` } }
     );
 
@@ -21,7 +23,7 @@ function App() {
     <div className="container">
       <div className="btn-container">
         <button className="btn-generation" type="button" onClick={getPlaylist}>
-          Générer des playlists !
+          Playlist Happy !
         </button>
       </div>
 
