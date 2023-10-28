@@ -2,17 +2,17 @@ import axios from "axios";
 import { useState } from "react";
 import Cards from "./components/Cards";
 import "./style/App.scss";
-import Direction from "./models/Moods";
+import Moods from "./models/Moods";
+import { getToken } from "./spotify";
 
 function App() {
   const [playlists, setPlaylists] = useState([]);
 
   const getPlaylist = async () => {
-    const token =
-      "BQBULDxixWbgGC733VNdzdgjs5px4Z-0Bi_TgNwgmnpqUPwhKC06bP25HhImG8-cCxvvCeerHiRCRpEcr8PxYfhwXlddQL8O_v5rhnM0gjNNxMK__YA";
-
+    const token = await getToken();
     const reponse = await axios.get(
-      `https://api.spotify.com/v1/browse/categories/${Direction.Chill}/playlists`,
+      `https://api.spotify.com/v1/browse/categories/${Moods.Chill}/playlists`,
+
       { headers: { Authorization: `Bearer ${token}` } }
     );
 
@@ -22,9 +22,24 @@ function App() {
   return (
     <div className="container">
       <div className="btn-container">
-        <button className="btn-generation" type="button" onClick={getPlaylist}>
+        {/* <button className="btn-generation" type="button" onClick={getPlaylist}>
           Playlist Happy !
-        </button>
+        </button> */}
+
+        <div>
+          <select
+            className="select-container"
+            onChange={getPlaylist}
+            name="pets"
+            id="pet-select"
+          >
+            <option type="button" value="">
+              Choisir son Mood
+            </option>
+            <option value="chill">Chill</option>
+            <option value="cat">Cat</option>
+          </select>
+        </div>
       </div>
 
       <div>
