@@ -1,40 +1,59 @@
-import Counter from "./components/Counter";
-import logo from "./assets/logo.svg";
-
-import "./App.css";
+import axios from "axios";
+import { useState } from "react";
+import Cards from "./components/Cards";
+import "./style/App.scss";
+import Moods from "./models/Moods";
+import { getToken } from "./spotify";
 
 function App() {
+  const [playlists, setPlaylists] = useState([]);
+
+  const getPlaylist = async () => {
+    const token = await getToken();
+    const reponse = await axios.get(
+      `https://api.spotify.com/v1/browse/categories/${Moods.Chill}/playlists`,
+
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+
+    setPlaylists(reponse.data.playlists.items);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React !</p>
+    <div className="container">
+      <div className="btn-container">
+        {/* <button className="btn-generation" type="button" onClick={getPlaylist}>
+          Playlist Happy !
+        </button> */}
 
-        <Counter />
+        <div>
+          <select
+            className="select-container"
+            onChange={getPlaylist}
+            name="pets"
+            id="pet-select"
+          >
+            <option type="button" value="">
+              Choisir son Mood
+            </option>
+            <option value="chill">Chill</option>
+            <option value="cat">Cat</option>
+          </select>
+        </div>
+      </div>
 
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <div>
+        {playlists.map((element) => {
+          return (
+            <Cards
+              playlistName={element.name}
+              imgCover={element.images[0].url}
+              playlistCategory={element.description}
+              key={element.id}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
