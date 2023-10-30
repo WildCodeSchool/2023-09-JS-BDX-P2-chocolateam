@@ -21,17 +21,31 @@ function App() {
 
   return (
     <div className="container">
+      <div className="searchBar">
+        <form action="" className="searchArtist">
+          <input
+            className="search-field"
+            type="text"
+            value="Cherche un artiste"
+          />
+          <input className="search-button" type="button" value="🔍" />
+        </form>
+      </div>
+      <div className="proposition-card">
+        <h1>Une sélection aux petits oignon !</h1>
+        <button type="button">Les nouveautés</button>
+      </div>
       <div className="btn-container">
         {/* <button className="btn-generation" type="button" onClick={getPlaylist}>
           Playlist Happy !
         </button> */}
 
-        <div>
+        <div className="mood-playlist">
+          <h2>Les playlists</h2>
           <select
             className="select-container"
             onChange={getPlaylist}
-            name="pets"
-            id="pet-select"
+            name="moods"
           >
             <option type="button" value="">
               Choisir son Mood
