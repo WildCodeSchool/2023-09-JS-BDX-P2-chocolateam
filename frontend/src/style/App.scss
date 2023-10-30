@@ -33,6 +33,28 @@ body {
   align-items: center;
 }
 
+.searchArtist {
+  .search-field {
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    font-size: 28px;
+    margin-top: 2rem;
+    width: 90%;
+  }
+  .search-button {
+    margin-left: 1.3rem;
+    margin-right: 0.8rem;
+    width: 6%;
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    padding-top: 0.4rem;
+    padding-bottom: 0.7rem;
+    font-size: 28px;
+  }
+}
 .card {
   background-color: $background_color;
   margin-bottom: 30px;
@@ -66,15 +88,53 @@ body {
 .btn-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 25px 0 25px 0;
 }
 
+.mood-playlist {
+  h2 {
+    margin-top: 2rem;
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    margin-left: 2rem;
+  }
+}
+
 .select-container {
-  background-color: #6d57cf;
+  background-color: $button_background_color;
   padding: 12px 30px;
   border-radius: 10px;
   border: 0;
   color: white;
   font-size: 28px;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  option {
+    font-size: 14px;
+  }
+}
+
+.proposition-card {
+  background-color: #2d354a;
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: 0;
+  color: white;
+  font-size: 28px;
+  margin-top: 1.8rem;
+  h1 {
+    font-size: 50px;
+  }
+  button {
+    background-color: $button_background_color;
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    font-size: 28px;
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
+  }
 }
