@@ -64,6 +64,7 @@ function App() {
               imgCover={element.images[0].url}
               playlistCategory={element.description}
               key={element.id}
+              idPlaylist={element.id}
             />
           );
         })}
