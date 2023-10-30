@@ -18,7 +18,7 @@ function App() {
 
     setPlaylists(reponse.data.playlists.items);
   };
-return (
+  return (
     <div className="container">
       <div className="searchBar">
         <form action="" className="searchArtist">
