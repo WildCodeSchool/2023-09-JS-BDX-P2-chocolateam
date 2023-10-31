@@ -3,7 +3,7 @@ import React from "react";
 function Questions() {
   return (
     <div className="mood-playlist">
-      <h2>Les playlists</h2>
+      <h2>Quel est ton Mood ?</h2>
       <select className="select-container" name="moods">
         <option value="Empty"> </option>
         <option value="Chill">Chill</option>
