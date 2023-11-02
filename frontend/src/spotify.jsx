@@ -1,11 +1,11 @@
 import axios from "axios";
 
-require("dotenv").config();
-
 const getToken = async () => {
+  const keys = await axios.get("http://localhost:3310/keys");
+
   const data = {
-    client_id: process.env.CLIENT_ID,
-    client_secret: process.env.CLIENT_SECRET,
+    client_id: keys.data.clientId,
+    client_secret: keys.data.clientSecret,
     grant_type: "client_credentials",
   };
 
