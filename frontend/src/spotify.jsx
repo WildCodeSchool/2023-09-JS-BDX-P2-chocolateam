@@ -1,12 +1,11 @@
 import axios from "axios";
 
-const CLIENT_ID = "6d42d06f69664a2d825342dbc4d9844d";
-const CLIENT_SECRET = "4bf11d8f4d584e74a8369004c4881668";
+require("dotenv").config();
 
 const getToken = async () => {
   const data = {
-    client_id: CLIENT_ID,
-    client_secret: CLIENT_SECRET,
+    client_id: process.env.CLIENT_ID,
+    client_secret: process.env.CLIENT_SECRET,
     grant_type: "client_credentials",
   };
 
@@ -22,4 +21,4 @@ const getToken = async () => {
 
   return token;
 };
-export { getToken };
+export default getToken;

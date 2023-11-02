@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import CardPlaylist from "../components/CardPlaylist";
-import { getToken } from "../spotify";
+import getToken from "../spotify";
 
 function TemplatePlaylist() {
   const [playlists, setPlaylists] = useState([]);
