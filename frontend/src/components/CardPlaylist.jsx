@@ -10,12 +10,11 @@ function CardPlaylist({
 }) {
   return (
     <div>
-      <div className="card" key={idPlaylist}>
-        <img className="img-fluid" src={imgCover} alt="cover" />
-        <h1>{playlistName}</h1>
-        <p>{playlistCategory}</p>
-        <Link className="search-button" to={`/tracklist/${idPlaylist}`}>
-          La tracklist
+      <div className="card">
+        <Link to={`/tracklist/${idPlaylist}`} key={idPlaylist}>
+          <img className="img-fluid" src={imgCover} alt="cover" />
+          <h1>{playlistName}</h1>
+          <p>{playlistCategory}</p>
         </Link>
       </div>
     </div>
