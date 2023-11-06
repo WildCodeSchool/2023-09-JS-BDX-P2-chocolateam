@@ -1,19 +1,22 @@
-// const [tracks, setTracks] = useState([]);
+import PropTypes from "prop-types";
+import "../style/App.scss";
 
-// const getTrackList = async () => {
-//   const token = await getToken();
-//   const reponseTrack = await axios.get(
-//     `https://api.spotify.com/v1/playlists/${idPlaylist}/tracks`,
-//     { headers: { Authorization: `Bearer ${token}` } }
-//   );
-//   setTracks(reponseTrack.data.items);
-// }
+function CardTrack({ trackName, trackImgCover, idTracklist }) {
+  return (
+    <div className="card" key={idTracklist}>
+      <img className="img-fluid" src={trackImgCover} alt="cover" />
+      <h1>{trackName}</h1>
+      {/* <button className="btn-generation" type="button" onClick={getTrackList}>
+        La tracklist
+      </button> */}
+    </div>
+  );
+}
 
-// {tracks.map((track) => {
-//     return (
-//       <CardTrack
-//         nameTrack={track.track.name}
-//         imgCoverTrack={track.track.album.images[0].url}
-//       />
-//     );
-//   })}
+CardTrack.propTypes = {
+  trackImgCover: PropTypes.string.isRequired,
+  trackName: PropTypes.string.isRequired,
+  idTracklist: PropTypes.string.isRequired,
+};
+
+export default CardTrack;

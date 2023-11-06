@@ -1,8 +1,43 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import CardTrack from "../components/CardTrack";
+import { getToken } from "../spotify";
+
 function TemplateTracklist() {
+  const [tracklists, setTracklists] = useState([]);
+  const { idPlaylist } = useParams();
+
+  const getTrackList = async () => {
+    const token = await getToken();
+    const reponse = await axios.get(
+      `https://api.spotify.com/v1/playlists/${idPlaylist}/tracks`,
+
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+
+    setTracklists(reponse.data.items);
+  };
+
+  useEffect(() => {
+    getTrackList();
+  }, []);
+
   return (
     <div>
-      <h1>Hello TRACKLIST</h1>
+      {tracklists.map((element) => {
+        return (
+          <CardTrack
+            trackName={element.added_at}
+            // imgCover={element.images[0].url}
+            // playlistCategory={element.description}
+            // key={element.id}
+            // idPlaylist={element.id}
+          />
+        );
+      })}
     </div>
   );
 }
+
 export default TemplateTracklist;

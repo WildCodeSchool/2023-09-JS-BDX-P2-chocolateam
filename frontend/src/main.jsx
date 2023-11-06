@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <TemplateHome /> },
       { path: "/playlist/:nomDuGenre", element: <TemplatePlaylist /> },
-      { path: "/tracklist", element: <TemplateTracklist /> },
+      { path: "/tracklist/:idPlaylist", element: <TemplateTracklist /> },
     ],
   },
 ]);

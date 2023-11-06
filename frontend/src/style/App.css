@@ -1,11 +1,9 @@
-@import "./settings.scss";
-
 * {
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
-  font-family: $font_style;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
@@ -33,17 +31,16 @@ body {
   align-items: center;
 }
 
-.searchArtist {
-  .search-field {
-    padding: 12px 30px;
-    border-radius: 10px;
-    border: 0;
-    color: white;
-    font-size: 28px;
-    margin-top: 2rem;
-    width: 90%;
-  }
+.searchArtist .search-field {
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: 0;
+  color: white;
+  font-size: 28px;
+  margin-top: 2rem;
+  width: 90%;
 }
+
 .search-button {
   display: flex;
   padding: 12px 30px;
@@ -69,27 +66,27 @@ body {
 }
 
 .card {
-  background-color: $background_color;
+  background-color: #4c4f5b;
   margin-bottom: 30px;
   margin-left: 20px;
   margin-right: 20px;
   padding: 30px;
   border-radius: 30px;
   color: #c2c2c2;
-  img {
-    border-radius: 15px;
-  }
-  h1 {
-    color: $font_color_title;
-    font-size: 23px;
-    margin-top: 15px;
-    font-weight: 600;
-  }
-  p {
-    color: #c2c2c2;
-    font-size: 16px;
-    font-weight: 400;
-  }
+}
+.card img {
+  border-radius: 15px;
+}
+.card h1 {
+  color: white;
+  font-size: 23px;
+  margin-top: 15px;
+  font-weight: 600;
+}
+.card p {
+  color: #c2c2c2;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .btn-generation {
@@ -109,18 +106,16 @@ body {
   flex-direction: column;
 }
 
-.mood-playlist {
-  h2 {
-    margin-top: 2rem;
-    font-size: 40px;
-    font-weight: 600;
-    color: white;
-    margin-left: 2rem;
-  }
+.mood-playlist h2 {
+  margin-top: 2rem;
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+  margin-left: 2rem;
 }
 
 .select-container {
-  background-color: $button_background_color;
+  background-color: #6d57cf;
   padding: 12px 30px;
   border-radius: 10px;
   border: 0;
@@ -128,10 +123,9 @@ body {
   font-size: 28px;
   margin-top: 2rem;
   margin-left: 2rem;
-
-  option {
-    font-size: 14px;
-  }
+}
+.select-container option {
+  font-size: 14px;
 }
 
 .proposition-card {
@@ -142,17 +136,17 @@ body {
   color: white;
   font-size: 28px;
   margin-top: 1.8rem;
-  h1 {
-    font-size: 50px;
-  }
-  button {
-    background-color: $button_background_color;
-    padding: 12px 30px;
-    border-radius: 10px;
-    border: 0;
-    color: white;
-    font-size: 28px;
-    margin-top: 1.8rem;
-    margin-bottom: 1.8rem;
-  }
+}
+.proposition-card h1 {
+  font-size: 50px;
+}
+.proposition-card button {
+  background-color: #6d57cf;
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: 0;
+  color: white;
+  font-size: 28px;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
 }

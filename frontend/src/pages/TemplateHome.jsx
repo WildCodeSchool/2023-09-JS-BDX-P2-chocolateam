@@ -4,12 +4,22 @@ import { Link } from "react-router-dom";
 function TemplateHome() {
   return (
     <div className="container">
-      <div className="mood-playlist">
-        <Link to="/playlist/country">Soirée au camping Les flots Bleus</Link>
-        <Link to="/playlist/kids">Anniversaire du petit Antoine</Link>
-        <Link to="/playlist/reggaeton">Tu veux pécho ?</Link>
-        <Link to="/playlist/sad">Dimanche soir de bonne humeur</Link>
-        <Link to="/playlist/death-metal">Pour se détendre</Link>
+      <div className="btn-container">
+        <Link className="search-button" to="/playlist/country">
+          Soirée au camping Les flots Bleus
+        </Link>
+        <Link className="search-button" to="/playlist/kids">
+          Anniversaire du petit Antoine
+        </Link>
+        <Link className="search-button" to="/playlist/reggaeton">
+          Est-ce que tu veux pécho ce soir ?
+        </Link>
+        <Link className="search-button" to="/playlist/sad">
+          Dimanche soir de bonne humeur
+        </Link>
+        <Link className="search-button" to="/playlist/death-metal">
+          Pour se détendre et se relaxer
+        </Link>
       </div>
     </div>
   );
