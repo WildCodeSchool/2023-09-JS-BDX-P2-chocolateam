@@ -28,7 +28,8 @@ function TemplateTracklist() {
       {tracklists.map((element) => {
         return (
           <CardTrack
-            trackName={element.added_at}
+            trackArtistName={element.track.artists[0].name}
+
             // imgCover={element.images[0].url}
             // playlistCategory={element.description}
             // key={element.id}
