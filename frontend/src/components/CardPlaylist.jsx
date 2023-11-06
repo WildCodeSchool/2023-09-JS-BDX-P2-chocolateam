@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import "../style/App.scss";
+import { Link } from "react-router-dom";
 
 function CardPlaylist({
   playlistName,
@@ -7,13 +9,15 @@ function CardPlaylist({
   idPlaylist,
 }) {
   return (
-    <div className="card" key={idPlaylist}>
-      <img className="img-fluid" src={imgCover} alt="cover" />
-      <h1>{playlistName}</h1>
-      <p>{playlistCategory}</p>
-      {/* <button className="btn-generation" type="button" onClick={getTrackList}>
-        La tracklist
-      </button> */}
+    <div>
+      <div className="card" key={idPlaylist}>
+        <img className="img-fluid" src={imgCover} alt="cover" />
+        <h1>{playlistName}</h1>
+        <p>{playlistCategory}</p>
+        <Link className="search-button" to={`/tracklist/${idPlaylist}`}>
+          La tracklist
+        </Link>
+      </div>
     </div>
   );
 }
