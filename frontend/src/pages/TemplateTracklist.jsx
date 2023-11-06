@@ -30,8 +30,7 @@ function TemplateTracklist() {
           <CardTrack
             trackArtistName={element.track.artists[0].name}
             trackName={element.track.name}
-
-            // imgCover={element.images[0].url}
+            trackImgCover={element.track.album.images[0].url}
             // playlistCategory={element.description}
             // key={element.id}
             // idPlaylist={element.id}
