@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import "../style/App.scss";
 
-function CardTrack({ trackName, trackImgCover, idTracklist }) {
+function CardTrack({ trackArtistName, trackImgCover, idTracklist, trackName }) {
   return (
     <div className="card" key={idTracklist}>
       <img className="img-fluid" src={trackImgCover} alt="cover" />
-      <h1>{trackName}</h1>
+      <h1>{trackArtistName}</h1>
+      <h2>{trackName}</h2>
       {/* <button className="btn-generation" type="button" onClick={getTrackList}>
         La tracklist
       </button> */}
@@ -15,8 +16,9 @@ function CardTrack({ trackName, trackImgCover, idTracklist }) {
 
 CardTrack.propTypes = {
   trackImgCover: PropTypes.string.isRequired,
-  trackName: PropTypes.string.isRequired,
+  trackArtistName: PropTypes.string.isRequired,
   idTracklist: PropTypes.string.isRequired,
+  trackName: PropTypes.string.isRequired,
 };
 
 export default CardTrack;
