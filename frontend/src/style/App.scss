@@ -67,6 +67,19 @@ body {
   background-color: #da4c20;
   transition: 0.5s;
 }
+.horizontal-list {
+  overflow-x: auto;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+
+  li {
+    flex: none;
+    width: 100%;
+    max-width: 250px;
+    margin: 0;
+  }
+}
 
 .card {
   background-color: $background_color;

@@ -24,7 +24,7 @@ function TemplatePlaylist() {
   }, []);
 
   return (
-    <div>
+    <ul className="horizontal-list">
       {playlists.map((element) => {
         return (
           <CardPlaylist
@@ -36,7 +36,7 @@ function TemplatePlaylist() {
           />
         );
       })}
-    </div>
+    </ul>
 
     // <h2> Affichages de toutes les playlists Chill</h2>
     // <CardPlaylist
