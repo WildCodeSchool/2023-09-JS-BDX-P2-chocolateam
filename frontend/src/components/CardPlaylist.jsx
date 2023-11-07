@@ -9,15 +9,13 @@ function CardPlaylist({
   idPlaylist,
 }) {
   return (
-    <div>
-      <div className="card">
-        <Link to={`/tracklist/${idPlaylist}`} key={idPlaylist}>
-          <img className="img-fluid" src={imgCover} alt="cover" />
-          <h1>{playlistName}</h1>
-          <p>{playlistCategory}</p>
-        </Link>
-      </div>
-    </div>
+    <li className="card">
+      <Link to={`/tracklist/${idPlaylist}`} key={idPlaylist}>
+        <img className="img-fluid" src={imgCover} alt="cover" />
+        <h1>{playlistName}</h1>
+        <p>{playlistCategory}</p>
+      </Link>
+    </li>
   );
 }
 
