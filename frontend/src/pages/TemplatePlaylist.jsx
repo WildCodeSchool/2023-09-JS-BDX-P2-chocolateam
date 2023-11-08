@@ -66,6 +66,7 @@ function TemplatePlaylist() {
                 key={element.id}
                 singleName={element.name}
                 imgCoverSingle={element.album.images[0].url}
+                trackSinglePreview={element.preview_url}
               />
             );
           })}
