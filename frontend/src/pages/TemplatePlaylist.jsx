@@ -38,29 +38,39 @@ function TemplatePlaylist() {
   }, []);
   return (
     <div>
-      <ul className="horizontal-list">
-        {playlists.map((element) => {
-          return (
-            <CardPlaylist
-              playlistName={element.name}
-              imgCover={element.images[0].url}
-              key={element.id}
-              idPlaylist={element.id}
-            />
-          );
-        })}
-      </ul>
-      <ul className="horizontal-list">
-        {singleList.map((element) => {
-          return (
-            <CardSingle
-              key={element.id}
-              singleName={element.name}
-              imgCoverSingle={element.album.images[0].url}
-            />
-          );
-        })}
-      </ul>
+      <div className="title-results-playlist">
+        <h2>Les playlists</h2>
+      </div>
+      <div className="resultat-playlist">
+        <ul className="horizontal-list">
+          {playlists.map((element) => {
+            return (
+              <CardPlaylist
+                playlistName={element.name}
+                imgCover={element.images[0].url}
+                key={element.id}
+                idPlaylist={element.id}
+              />
+            );
+          })}
+        </ul>
+      </div>
+      <div className="title-results-singlelist">
+        <h2 className="title-results-single">Quelques morceaux</h2>
+      </div>
+      <div className="resultat-singlelist">
+        <ul className="horizontal-list">
+          {singleList.map((element) => {
+            return (
+              <CardSingle
+                key={element.id}
+                singleName={element.name}
+                imgCoverSingle={element.album.images[0].url}
+              />
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }

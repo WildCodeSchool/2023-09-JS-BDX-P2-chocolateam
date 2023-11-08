@@ -24,7 +24,7 @@ function TemplateTracklist() {
   }, []);
 
   return (
-    <div>
+    <div className="resultats-tracks">
       {tracklists.map((element) => {
         return (
           <CardTrack

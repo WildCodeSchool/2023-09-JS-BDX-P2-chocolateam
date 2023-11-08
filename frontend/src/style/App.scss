@@ -33,6 +33,39 @@ body {
   align-items: center;
 }
 
+.container-title-template {
+  background-color: #2d354b;
+  height: 200px;
+
+  border-radius: 0 0 30px 30px;
+}
+.container-title-template h1 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+.title-results-playlist,
+.title-results-singlelist {
+  color: white;
+  margin-bottom: 30px;
+}
+.resultat-playlist,
+.resultat-singlelist {
+  margin-left: 20px;
+}
+
+.title-results-single,
+.title-results-playlist h2 {
+  color: white;
+  font-weight: 500;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.resultats-tracks {
+  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+}
 .searchArtist {
   .search-field {
     padding: 12px 30px;
@@ -95,14 +128,17 @@ body {
   }
   h1 {
     color: $font_color_title;
-    font-size: 23px;
+    font-size: 20px;
     margin-top: 15px;
-    font-weight: 600;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 22px;
   }
   p {
     color: #c2c2c2;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: capitalize;
   }
 }
 
