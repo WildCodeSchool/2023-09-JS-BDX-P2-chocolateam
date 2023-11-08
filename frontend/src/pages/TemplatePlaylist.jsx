@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import CardPlaylist from "../components/CardPlaylist";
 import { getToken } from "../spotify";
 import CardSingle from "../components/CardSingle";
+import apiGet from "../services/api.service";
 
 function TemplatePlaylist() {
   const [playlists, setPlaylists] = useState([]);
@@ -11,14 +12,11 @@ function TemplatePlaylist() {
   const { nomDuGenre } = useParams();
 
   const getPlaylist = async () => {
-    const token = await getToken();
-    const reponse = await axios.get(
-      `https://api.spotify.com/v1/search?q=${nomDuGenre}&type=playlist`,
-
-      { headers: { Authorization: `Bearer ${token}` } }
+    const response = await apiGet(
+      `https://api.spotify.com/v1/search?q=${nomDuGenre}&type=playlist`
     );
 
-    setPlaylists(reponse.data.playlists.items);
+    setPlaylists(response.playlists.items);
   };
 
   useEffect(() => {
