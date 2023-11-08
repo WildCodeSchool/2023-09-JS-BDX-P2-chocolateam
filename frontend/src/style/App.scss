@@ -36,7 +36,6 @@ body {
 .container-title-template {
   background-color: #2d354b;
   height: 200px;
-
   border-radius: 0 0 30px 30px;
 }
 .container-title-template h1 {
@@ -52,6 +51,11 @@ body {
 .resultat-playlist,
 .resultat-singlelist {
   margin-left: 20px;
+  audio {
+    height: 3rem;
+    width: 12rem;
+    padding-top: 1rem;
+  }
 }
 
 .title-results-single,
@@ -80,7 +84,7 @@ body {
 .search-button {
   display: flex;
   padding: 12px 30px;
-  background-color: #6d57cf;
+  background-color: $button_background_color;
   width: 80%;
   border-radius: 10px;
   border: 0;
@@ -114,6 +118,18 @@ body {
   }
 }
 
+.horizontal-list::-webkit-scrollbar {
+  width: 0.1em;
+}
+
+.horizontal-list::-webkit-scrollbar-thumb {
+  background-color: #292d3b;
+}
+
+.horizontal-list::-webkit-scrollbar-track {
+  background-color: #292d3b;
+}
+
 .card {
   background-color: $background_color;
   margin-bottom: 30px;
@@ -143,7 +159,7 @@ body {
 }
 
 .btn-generation {
-  background-color: #6d57cf;
+  background-color: $button_background_color;
   padding: 12px 30px;
   border-radius: 10px;
   border: 0;
@@ -204,5 +220,27 @@ body {
     font-size: 28px;
     margin-top: 1.8rem;
     margin-bottom: 1.8rem;
+  }
+}
+
+.general-title {
+  display: flex;
+  background-color: #2d354a;
+  width: auto;
+  height: 11rem;
+  margin: 20px 20px 30px 20px;
+  padding: 30px 30px 30px 15px;
+  border-radius: 30px;
+  color: #ffffff;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-around;
+  button {
+    background-color: $button_background_color;
+    border-radius: 9px;
+    width: 6rem;
+    height: 2rem;
+    border: none;
+    color: #ffffff;
   }
 }

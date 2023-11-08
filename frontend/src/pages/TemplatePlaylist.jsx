@@ -38,6 +38,10 @@ function TemplatePlaylist() {
   }, []);
   return (
     <div>
+      <div className="general-title">
+        <h2>Une sélection aux petits oignons</h2>
+        <button type="button">Bouton</button>
+      </div>
       <div className="title-results-playlist">
         <h2>Les playlists</h2>
       </div>
