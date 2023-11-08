@@ -31,9 +31,8 @@ function TemplateTracklist() {
             trackArtistName={element.track.artists[0].name}
             trackName={element.track.name}
             trackImgCover={element.track.album.images[0].url}
-            // playlistCategory={element.description}
-            // key={element.id}
-            // idPlaylist={element.id}
+            trackPreview={element.track.preview_url}
+            trackId={element.track.artists[0].id}
           />
         );
       })}
