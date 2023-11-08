@@ -8,7 +8,7 @@ function TemplateHome() {
         <Link className="search-button" to="/playlist/country">
           Soirée au camping Les flots Bleus
         </Link>
-        <Link className="search-button" to="/playlist/kids">
+        <Link className="search-button" to="/playlist/disney">
           Anniversaire du petit Antoine
         </Link>
         <Link className="search-button" to="/playlist/reggaeton">
