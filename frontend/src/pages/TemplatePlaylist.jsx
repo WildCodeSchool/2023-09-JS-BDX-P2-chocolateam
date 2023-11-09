@@ -26,11 +26,20 @@ function TemplatePlaylist() {
   const getSingleList = async () => {
     const token = await getToken();
     const reponseSingle = await axios.get(
-      `https://api.spotify.com/v1/search?q=${nomDuGenre}&type=track&limit=15`,
+      `https://api.spotify.com/v1/search?q=${nomDuGenre}&type=track`,
 
       { headers: { Authorization: `Bearer ${token}` } }
     );
-    setSingleList(reponseSingle.data.tracks.items);
+
+    const tracks = reponseSingle.data.tracks.items;
+
+    const myList = [];
+    for (let i = 0; i < 15; i += 1) {
+      const randomIndice = Math.floor(Math.random() * tracks.length);
+      const randomTrack = tracks[randomIndice];
+      myList.push(randomTrack);
+    }
+    setSingleList(myList);
   };
 
   useEffect(() => {
@@ -38,6 +47,10 @@ function TemplatePlaylist() {
   }, []);
   return (
     <div>
+      <div className="general-title">
+        <h2>Une sélection aux petits oignons</h2>
+        <button type="button">Bouton</button>
+      </div>
       <div className="title-results-playlist">
         <h2>Les playlists</h2>
       </div>
