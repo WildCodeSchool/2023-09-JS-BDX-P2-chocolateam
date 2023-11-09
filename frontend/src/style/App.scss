@@ -157,6 +157,10 @@ body {
     text-transform: capitalize;
   }
 }
+.card:hover {
+  filter: brightness(125%);
+  transition: 0.3s;
+}
 
 .btn-generation {
   background-color: $button_background_color;
