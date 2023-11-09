@@ -16,11 +16,14 @@ const router = createBrowserRouter([
       {
         path: "/playlist/:nomDuGenre",
         element: <TemplatePlaylist />,
+        // loader: async ({ nomDuGenre }) => {
+        //   const response = await axios.get(
+        //     `https://api.spotify.com/v1/search?q=${nomDuGenre}&type=playlist`
+        //   );
+        //   return { reponse: response.playlists.items };
+        // },
       },
-      {
-        path: "/tracklist/:idPlaylist",
-        element: <TemplateTracklist />,
-      },
+      { path: "/tracklist/:idPlaylist", element: <TemplateTracklist /> },
     ],
   },
 ]);
