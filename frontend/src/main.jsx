@@ -13,8 +13,14 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <TemplateHome /> },
-      { path: "/playlist/:nomDuGenre", element: <TemplatePlaylist /> },
-      { path: "/tracklist/:idPlaylist", element: <TemplateTracklist /> },
+      {
+        path: "/playlist/:nomDuGenre",
+        element: <TemplatePlaylist />,
+      },
+      {
+        path: "/tracklist/:idPlaylist",
+        element: <TemplateTracklist />,
+      },
     ],
   },
 ]);
