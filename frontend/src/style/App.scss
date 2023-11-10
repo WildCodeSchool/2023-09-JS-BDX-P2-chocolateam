@@ -72,6 +72,11 @@ body {
   overflow: hidden;
   audio {
     height: 50px;
+    opacity: 0.4;
+  }
+  audio:hover {
+    opacity: 1;
+    transition: 0.3s;
   }
 }
 
@@ -173,6 +178,10 @@ body {
     font-weight: 300;
     text-transform: capitalize;
   }
+}
+.card:hover {
+  filter: brightness(125%);
+  transition: 0.3s;
 }
 
 .btn-generation {
