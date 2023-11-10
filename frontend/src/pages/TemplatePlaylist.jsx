@@ -1,50 +1,10 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import CardPlaylist from "../components/CardPlaylist";
-import { getToken } from "../spotify";
 import CardSingle from "../components/CardSingle";
-import apiGet from "../services/api.service";
 
 function TemplatePlaylist() {
-  const [playlists, setPlaylists] = useState([]);
-  const [singleList, setSingleList] = useState([]);
-  const { nomDuGenre } = useParams();
+  const { playlists, singleList } = useLoaderData();
 
-  const getPlaylist = async () => {
-    const response = await apiGet(
-      `https://api.spotify.com/v1/search?q=${nomDuGenre}&type=playlist`
-    );
-
-    setPlaylists(response.playlists.items);
-  };
-
-  useEffect(() => {
-    getPlaylist();
-  }, []);
-
-  const getSingleList = async () => {
-    const token = await getToken();
-    const reponseSingle = await axios.get(
-      `https://api.spotify.com/v1/search?q=${nomDuGenre}&type=track`,
-
-      { headers: { Authorization: `Bearer ${token}` } }
-    );
-
-    const tracks = reponseSingle.data.tracks.items;
-
-    const myList = [];
-    for (let i = 0; i < 15; i += 1) {
-      const randomIndice = Math.floor(Math.random() * tracks.length);
-      const randomTrack = tracks[randomIndice];
-      myList.push(randomTrack);
-    }
-    setSingleList(myList);
-  };
-
-  useEffect(() => {
-    getSingleList();
-  }, []);
   return (
     <div>
       <div className="general-title">

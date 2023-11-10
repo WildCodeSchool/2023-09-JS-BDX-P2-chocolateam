@@ -8,14 +8,16 @@ function CardSingle({
   trackSinglePreview,
 }) {
   return (
-    <li className="card" key={idSingle}>
+    <li className="card cardSingle" key={idSingle}>
       <img className="img-fluid" src={imgCoverSingle} alt="cover" />
-      <h1>{singleName}</h1>
       {trackSinglePreview && (
-        <audio controls src={trackSinglePreview}>
-          <track kind="captions" />
-        </audio>
+        <div className="audio-rond">
+          <audio controls src={trackSinglePreview}>
+            <track kind="captions" />
+          </audio>
+        </div>
       )}
+      <h2>{singleName}</h2>
     </li>
   );
 }
