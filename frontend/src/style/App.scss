@@ -61,6 +61,12 @@ body {
 
 .cardSingle {
   position: relative;
+  h2 {
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    margin-top: 15px;
+  }
 }
 .audio-rond {
   position: absolute;
@@ -87,11 +93,16 @@ body {
   margin-left: 20px;
   margin-top: 20px;
 }
+
 .resultats-tracks {
-  background-color: red;
   display: flex;
   flex-wrap: wrap;
+  h2 {
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
 }
+
 .searchArtist {
   .search-field {
     padding: 12px 30px;
@@ -239,7 +250,7 @@ body {
   }
   button {
     background-color: $button_background_color;
-    padding: 12px 30px;
+    padding: 12px 50px;
     border-radius: 10px;
     border: 0;
     color: white;
@@ -264,9 +275,28 @@ body {
   button {
     background-color: $button_background_color;
     border-radius: 9px;
-    width: 6rem;
-    height: 2rem;
     border: none;
     color: #ffffff;
+    padding: 12px 25px;
+    margin-top: 15px;
+  }
+}
+button:hover {
+  filter: brightness(125%);
+  transition: 0.3s;
+}
+button:active {
+  background-color: #da4c20;
+}
+
+img {
+  width: 16rem;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 6rem;
   }
 }

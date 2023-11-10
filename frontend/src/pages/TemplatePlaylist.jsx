@@ -1,12 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import CardPlaylist from "../components/CardPlaylist";
 import CardSingle from "../components/CardSingle";
+import NavBis from "../components/NavBis";
 
 function TemplatePlaylist() {
   const { playlists, singleList } = useLoaderData();
 
   return (
     <div>
+      <NavBis />
       <div className="general-title">
         <h2>Une sélection aux petits oignons</h2>
         <button type="button">Les nouveautés</button>
