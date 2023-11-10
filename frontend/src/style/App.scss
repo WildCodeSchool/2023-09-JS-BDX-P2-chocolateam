@@ -72,6 +72,11 @@ body {
   overflow: hidden;
   audio {
     height: 50px;
+    opacity: 0.4;
+  }
+  audio:hover {
+    opacity: 1;
+    transition: 0.3s;
   }
 }
 
