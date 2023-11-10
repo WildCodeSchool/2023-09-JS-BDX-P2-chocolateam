@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import CardTrack from "../components/CardTrack";
 import { getToken } from "../spotify";
+import NavBis from "../components/NavBis";
 
 function TemplateTracklist() {
   const [tracklists, setTracklists] = useState([]);
@@ -27,13 +28,16 @@ function TemplateTracklist() {
     <div className="resultats-tracks">
       {tracklists.map((element) => {
         return (
-          <CardTrack
-            trackArtistName={element.track.artists[0].name}
-            trackName={element.track.name}
-            trackImgCover={element.track.album.images[0].url}
-            trackPreview={element.track.preview_url}
-            trackId={element.track.artists[0].id}
-          />
+          <div>
+            <NavBis />
+            <CardTrack
+              trackArtistName={element.track.artists[0].name}
+              trackName={element.track.name}
+              trackImgCover={element.track.album.images[0].url}
+              trackPreview={element.track.preview_url}
+              trackId={element.track.artists[0].id}
+            />
+          </div>
         );
       })}
     </div>

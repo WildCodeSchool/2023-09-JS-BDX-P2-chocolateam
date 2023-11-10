@@ -5,6 +5,7 @@ function Nav() {
   return (
     <div className="container">
       <div className="btn-container">
+        <img src="./src/assets/LogoMoodStation.png" alt="Logo Mood Station" />
         <Link className="search-button" to="/playlist/country">
           Soirée au camping Les flots Bleus
         </Link>
