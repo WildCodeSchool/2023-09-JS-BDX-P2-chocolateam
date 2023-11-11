@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import CardTrack from "../components/CardTrack";
 import { getToken } from "../spotify";
 import NavBis from "../components/NavBis";
+import Redirection from "../components/Redirection";
 
 function TemplateTracklist() {
   const [tracklists, setTracklists] = useState([]);
@@ -26,10 +27,11 @@ function TemplateTracklist() {
 
   return (
     <div className="resultats-tracks">
+      <NavBis />
+      <Redirection />
       {tracklists.map((element) => {
         return (
           <div>
-            <NavBis />
             <CardTrack
               trackArtistName={element.track.artists[0].name}
               trackName={element.track.name}
