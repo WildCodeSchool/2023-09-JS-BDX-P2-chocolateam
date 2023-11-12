@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import CardPlaylist from "../components/CardPlaylist";
 import CardSingle from "../components/CardSingle";
 import NavBis from "../components/NavBis";
+import MoodButtons from "../components/MoodButtons";
 
 function TemplatePlaylist() {
   const { playlists, singleList } = useLoaderData();
@@ -11,7 +12,9 @@ function TemplatePlaylist() {
       <NavBis />
       <div className="general-title">
         <h2>Une sélection aux petits oignons</h2>
-        <button type="button">Les nouveautés</button>
+      </div>
+      <div>
+        <MoodButtons />
       </div>
       <div className="title-results-playlist">
         <h2>Les playlists</h2>
