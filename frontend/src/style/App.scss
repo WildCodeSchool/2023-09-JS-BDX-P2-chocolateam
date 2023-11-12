@@ -66,6 +66,9 @@ body {
     font-weight: 400;
     color: white;
     margin-top: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 .audio-rond {
@@ -182,6 +185,9 @@ body {
     font-weight: 400;
     text-transform: capitalize;
     line-height: 22px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   p {
     color: #c2c2c2;
