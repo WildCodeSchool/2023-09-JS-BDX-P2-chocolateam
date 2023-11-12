@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function MoodButtons() {
   return (
     <div>
-      <div className="mood-container">
+      <div className="mood-container horizontal-list-mood">
         <Link className="mood-button" to="/playlist/country">
           Camping
         </Link>
