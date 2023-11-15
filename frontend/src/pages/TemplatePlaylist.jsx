@@ -42,7 +42,7 @@ function TemplatePlaylist() {
               idSingle={element.id}
               singleName={element.name}
               imgCoverSingle={element.album.images[0].url}
-              trackSinglePreview={element.preview_url ?? ""}
+              trackSinglePreview={element.preview_url ?? "Super musique"}
             />
           ))}
         </ul>
