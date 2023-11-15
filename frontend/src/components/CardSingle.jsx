@@ -10,7 +10,7 @@ function CardSingle({
   return (
     <li className="card cardSingle" key={idSingle}>
       <img className="img-fluid" src={imgCoverSingle} alt="cover" />
-      {trackSinglePreview && (
+      {trackSinglePreview?.length && (
         <div className="audio-rond">
           <audio controls src={trackSinglePreview}>
             <track kind="captions" />
