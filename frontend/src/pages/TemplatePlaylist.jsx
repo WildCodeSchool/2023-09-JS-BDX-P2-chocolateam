@@ -10,9 +10,7 @@ function TemplatePlaylist() {
   return (
     <div>
       <NavBis />
-      <div className="general-title">
-        <h2>Une sélection aux petits oignons</h2>
-      </div>
+
       <div>
         <MoodButtons />
       </div>
