@@ -10,10 +10,15 @@ function CardTrack({
 }) {
   return (
     <div className="card" key={trackId}>
-      <img className="img-fluid" src={trackImgCover} alt="cover" />
+      <img
+        className="img-fluid"
+        src={trackImgCover}
+        alt="cover"
+        loading="lazy"
+      />
       <h1>{trackArtistName}</h1>
       <h2>{trackName}</h2>
-      {trackPreview && (
+      {trackPreview?.length && (
         <audio controls src={trackPreview}>
           <track kind="captions" />
         </audio>

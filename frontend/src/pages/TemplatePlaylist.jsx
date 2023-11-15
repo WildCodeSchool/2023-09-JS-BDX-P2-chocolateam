@@ -21,16 +21,14 @@ function TemplatePlaylist() {
       </div>
       <div className="resultat-playlist">
         <ul className="horizontal-list">
-          {playlists.map((element) => {
-            return (
-              <CardPlaylist
-                playlistName={element.name}
-                imgCover={element.images[0].url}
-                key={element.id}
-                idPlaylist={element.id}
-              />
-            );
-          })}
+          {playlists.map((element) => (
+            <CardPlaylist
+              playlistName={element.name}
+              imgCover={element.images[0].url}
+              key={element.id}
+              idPlaylist={element.id}
+            />
+          ))}
         </ul>
       </div>
       <div className="title-results-singlelist">
@@ -38,16 +36,15 @@ function TemplatePlaylist() {
       </div>
       <div className="resultat-singlelist">
         <ul className="horizontal-list">
-          {singleList.map((element) => {
-            return (
-              <CardSingle
-                key={element.id}
-                singleName={element.name}
-                imgCoverSingle={element.album.images[0].url}
-                trackSinglePreview={element.preview_url}
-              />
-            );
-          })}
+          {singleList.map((element) => (
+            <CardSingle
+              key={element.id}
+              idSingle={element.id}
+              singleName={element.name}
+              imgCoverSingle={element.album.images[0].url}
+              trackSinglePreview={element.preview_url ?? ""}
+            />
+          ))}
         </ul>
       </div>
     </div>
