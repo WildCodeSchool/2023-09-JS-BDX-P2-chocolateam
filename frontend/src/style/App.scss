@@ -358,3 +358,30 @@ img {
 .horizontal-list-mood::-webkit-scrollbar-track {
   background-color: #292d3b;
 }
+
+.resultats-tracks {
+  button {
+    font-size: 0;
+  }
+  .navContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 768px) {
+  .resultats-tracks {
+    .trackContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 0px 0px;
+    }
+    .card {
+      width: 100%;
+      max-width: 490px;
+    }
+  }
+}
