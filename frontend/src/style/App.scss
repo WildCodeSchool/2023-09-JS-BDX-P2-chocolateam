@@ -300,15 +300,6 @@ img {
   width: 16rem;
 }
 
-.hero {
-  padding-top: 20px;
-  display: flex;
-  justify-content: center;
-  img {
-    width: 9rem;
-  }
-}
-
 .mood-button {
   display: flex;
   padding: 12px 30px;
@@ -365,12 +356,48 @@ img {
 .resultats-tracks {
   button {
     font-size: 0;
+    background-color: #292d3b;
+    border: none;
   }
-  .navContainer {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
+}
+
+.hero {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 9rem;
+  }
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.retour-button {
+  width: 48px;
+}
+
+.tracklistContainer {
+  width: 100%;
+  position: relative;
+  max-width: 1200px;
+  padding: 0 12px;
+  margin: 0 auto;
+}
+
+.returnbuttonContainer {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  button {
+    background-color: transparent;
   }
 }
 
@@ -386,5 +413,9 @@ img {
       flex: 1;
       max-width: 400px;
     }
+  }
+
+  .retour-button {
+    width: 90px;
   }
 }
