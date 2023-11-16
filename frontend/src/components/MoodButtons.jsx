@@ -8,17 +8,17 @@ function MoodButtons() {
         <Link className="mood-button" to="/playlist/country">
           Camping
         </Link>
-        <Link className="mood-button" to="/playlist/disney">
-          Anniversaire
-        </Link>
         <Link className="mood-button" to="/playlist/reggaeton">
           Pour pécho
         </Link>
         <Link className="mood-button" to="/playlist/sad">
-          Dimanche soir
+          Dimanche soir chill
+        </Link>
+        <Link className="mood-button" to="/playlist/disney">
+          Anniversaire
         </Link>
         <Link className="mood-button" to="/playlist/death-metal">
-          Détente
+          Rupture
         </Link>
       </div>
     </div>
