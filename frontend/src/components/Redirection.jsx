@@ -8,11 +8,13 @@ function Redirection() {
   };
 
   return (
-    <div>
-      <button type="button" onClick={handleGoBack}>
-        retour
-      </button>
-    </div>
+    <button type="button" onClick={handleGoBack}>
+      <img
+        className="retour-button"
+        src="../src/assets/bouton-retour.png"
+        alt="bouton retour"
+      />
+    </button>
   );
 }
 
