@@ -8,9 +8,11 @@ function TemplateTracklist() {
 
   return (
     <div className="resultats-tracks">
-      <div className="navContainer">
+      <div className="tracklistContainer">
+        <div className="returnbuttonContainer">
+          <Redirection />
+        </div>
         <NavBis />
-        <Redirection />
       </div>
       <div className="trackContainer">
         {tracklists.map((element) => (
