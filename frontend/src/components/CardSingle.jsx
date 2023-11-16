@@ -26,7 +26,11 @@ CardSingle.propTypes = {
   singleName: PropTypes.string.isRequired,
   imgCoverSingle: PropTypes.string.isRequired,
   idSingle: PropTypes.string.isRequired,
-  trackSinglePreview: PropTypes.string.isRequired,
+  trackSinglePreview: PropTypes.string,
+};
+
+CardSingle.defaultProps = {
+  trackSinglePreview: null,
 };
 
 export default CardSingle;

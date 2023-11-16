@@ -32,7 +32,10 @@ CardTrack.propTypes = {
   trackArtistName: PropTypes.string.isRequired,
   trackId: PropTypes.string.isRequired,
   trackName: PropTypes.string.isRequired,
-  trackPreview: PropTypes.string.isRequired,
+  trackPreview: PropTypes.string,
 };
 
+CardTrack.defaultProps = {
+  trackPreview: null,
+};
 export default CardTrack;
