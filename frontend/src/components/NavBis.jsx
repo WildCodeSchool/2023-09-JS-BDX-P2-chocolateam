@@ -1,7 +1,9 @@
+import LogoMoodStationV2 from "../assets/LogoMoodStationV2.png";
+
 function NavBis() {
   return (
     <div className="hero">
-      <img src="../src/assets/LogoMoodStationV2.png" alt="Logo Mood Station" />
+      <img src={LogoMoodStationV2} alt="Logo Mood Station" />
     </div>
   );
 }

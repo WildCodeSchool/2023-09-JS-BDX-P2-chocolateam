@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import boutonRetour from "../assets/bouton-retour.png";
 
 function Redirection() {
   const navigate = useNavigate();
@@ -9,11 +10,7 @@ function Redirection() {
 
   return (
     <button type="button" onClick={handleGoBack}>
-      <img
-        className="retour-button"
-        src="../src/assets/bouton-retour.png"
-        alt="bouton retour"
-      />
+      <img className="retour-button" src={boutonRetour} alt="bouton retour" />
     </button>
   );
 }

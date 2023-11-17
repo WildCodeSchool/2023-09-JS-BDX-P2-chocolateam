@@ -1,14 +1,12 @@
 import "../style/App.scss";
 import { Link } from "react-router-dom";
+import LogoMoodStationVSansRond from "../assets/LogoMoodStationVSansRond.png";
 
 function Nav() {
   return (
     <div className="container">
       <div className="btn-container">
-        <img
-          src="./src/assets/LogoMoodStationVSansRond.png"
-          alt="Logo Mood Station"
-        />
+        <img src={LogoMoodStationVSansRond} alt="Logo Mood Station" />
         <Link className="search-button" to="/playlist/country">
           Soirée au camping Les Flots Bleus
         </Link>
